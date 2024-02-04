@@ -2,56 +2,31 @@
 sidebar_position: 2
 ---
 
-# Networking in ECS
+# Networking
 
-Documents are **groups of pages** connected through:
+Most of the topics are coverd in below reference:
 
-- a **sidebar**
-- **previous/next navigation**
-- **versioning**
+- TCP/IP, OSI Model, IP Address Scheme, Subnet masks, Sockets - Port numbers, DNS - DNS server, Routing, Ipv6
 
-## Create your first Doc
+Ref: https://www.youtube.com/watch?v=n7Quap-ysak&list=PLQd3D0Eos95dYJaQ0u9tiE5hjlyJEM_QY&index=18
 
-Create a Markdown file at `docs/hello.md`:
+- Know about Network components: Router, Switch, NAT, SSL Handshake, TCP/UDP protocol, TTL, DHCP, Private/Public IP address, Mac address
+- Know about Network flow: Inbound/outbound traffic, Bandwidth, Latency, ...
+- Know about Network security: NACL, Firewall,...
 
-```md title="docs/hello.md"
-# Hello
+## How do Devops engineers use netwrking knowledge in their work?
 
-This is my **first Docusaurus document**!
-```
+- Desgining and deploying scalable and reliable (chắc chắn, đáng tin cậy) networks
+- Automating network task
+- Troubleshoot network problems
 
-A new document is now available at [http://localhost:3000/docs/hello](http://localhost:3000/docs/hello).
+## Networking in ECS
 
-## Configure the Sidebar
+**Classless Inter-Domain Routing (CIDR)** is an IP address allocation method that improves data routing efficiency on the internet. Every machine, server, and end-user device that connects to the internet has a unique number, called an IP address, associated with it. Devices find and communicate with one another by using these IP addresses. Organizations use CIDR to allocate IP addresses flexibly and efficiently in their networks.
 
-Docusaurus automatically **creates a sidebar** from the `docs` folder.
+Ref:
 
-Add metadata to customize the sidebar label and position:
+- https://aws.amazon.com/what-is/cidr/
+- https://docs.aws.amazon.com/vpc/latest/userguide/subnet-sizing.html
 
-```md title="docs/hello.md" {1-4}
----
-sidebar_label: "Hi!"
-sidebar_position: 3
----
-
-# Hello
-
-This is my **first Docusaurus document**!
-```
-
-It is also possible to create your sidebar explicitly in `sidebars.js`:
-
-```js title="sidebars.js"
-export default {
-  tutorialSidebar: [
-    "intro",
-    // highlight-next-line
-    "hello",
-    {
-      type: "category",
-      label: "Tutorial",
-      items: ["tutorial-basics/create-a-document"],
-    },
-  ],
-};
-```
+![](../../static/ecs/networking.png)
